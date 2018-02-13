@@ -24,6 +24,19 @@ namespace Tray_WPF
         public MainWindow()
         {
             InitializeComponent();
+
+            List<FileFolder> users = new List<FileFolder>();
+            users.Add(new FileFolder() {Name = "aaa.docx", LastChange = new DateTime(2017, 7, 23, 12, 55, 59) });
+            users.Add(new FileFolder() {Name = "bbb.xlsx", LastChange = new DateTime(2017, 1, 17, 6, 20, 11) });
+            users.Add(new FileFolder() {Name = "ccc.pptx", LastChange = new DateTime(2017, 9, 2, 9, 44, 22) });
+            filesAndFolders.ItemsSource = users;
+            
         }
+    }
+
+    public class FileFolder
+    {
+        public string Name { get; set; }
+        public DateTime LastChange { get; set; }
     }
 }

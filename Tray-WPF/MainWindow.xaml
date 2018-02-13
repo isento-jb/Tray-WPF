@@ -12,7 +12,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Ribbon x:Name="RibbonWin"  SelectedIndex="0">
+        <Ribbon x:Name="RibbonWin"  SelectedIndex="0" Grid.Row="0">
             <Ribbon.HelpPaneContent>
                 <RibbonButton SmallImageSource="images\40px\help.png" />
             </Ribbon.HelpPaneContent>
@@ -35,5 +35,11 @@
             </RibbonTab>
 
         </Ribbon>
+        <DataGrid Name="filesAndFolders" AutoGenerateColumns="False" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Last Change" Binding="{Binding LastChange}" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </ribbon:RibbonWindow>
